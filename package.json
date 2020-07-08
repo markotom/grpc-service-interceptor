@@ -1,0 +1,33 @@
+{
+  "name": "grpc-service-interceptor",
+  "version": "0.0.1",
+  "description": "Creates services adding interceptors support for its methods",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markotom/grpc-service-interceptor.git"
+  },
+  "keywords": [
+    "grpc",
+    "rpc",
+    "middleware",
+    "interceptor"
+  ],
+  "author": "Marco Godínez <markotom@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markotom/grpc-service-interceptor/issues"
+  },
+  "homepage": "https://github.com/markotom/grpc-service-interceptor#readme",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "jest": "^26.1.0"
+  }
+}
