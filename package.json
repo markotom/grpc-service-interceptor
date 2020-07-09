@@ -1,6 +1,6 @@
 {
   "name": "grpc-service-interceptor",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Creates services adding interceptors support for its methods",
   "main": "index.js",
   "scripts": {
