@@ -54,7 +54,8 @@ module.exports = class GrpcServiceInterceptor {
           callback,
         };
 
-        const handler = interceptors.pop();
+        const stack = [].concat(interceptors);
+        const handler = stack.pop();
 
         if (interceptors.length) {
           return compose(interceptors)(ctx).then(() => handler(ctx));
