@@ -38,5 +38,5 @@ const secondHandler = async (ctx) => {
 service.addMethod('methodName', firstInterceptor, secondInterceptor, firstHandler);
 service.addMethod('anotherMethodName', firstInterceptor, secondInterceptor, secondHandler);
 
-service.initialize();
+service.configure();
 ```

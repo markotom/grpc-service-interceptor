@@ -3,7 +3,7 @@ const GrpcServiceInterceptor = require('..');
 const proto = require('./utils/proto');
 const grpcServer = require('./utils/grpcServer');
 
-describe('GrpcServiceInterceptor#initialize', () => {
+describe('GrpcServiceInterceptor#configure', () => {
   beforeEach(() => {
     this.service = new GrpcServiceInterceptor({
       grpcServer,
@@ -12,10 +12,10 @@ describe('GrpcServiceInterceptor#initialize', () => {
   });
 
   it('should be a function', () => {
-    expect(this.service.initialize).toBeFunction();
+    expect(this.service.configure).toBeFunction();
   });
 
-  it('should initialize a service', async () => {
+  it('should configure a service', async () => {
     const interceptor1 = jest.fn((ctx, next) => next());
     const interceptor2 = jest.fn((ctx, next) => next());
 
@@ -29,7 +29,7 @@ describe('GrpcServiceInterceptor#initialize', () => {
     this.service.addMethod('recordRoute', interceptor1, interceptor2, recordRoute);
     this.service.addMethod('routeChat', interceptor1, interceptor2, routeChat);
 
-    this.service.initialize();
-    expect(this.service.initialized).toBe(true);
+    this.service.configure();
+    expect(this.service.configured).toBe(true);
   });
 });

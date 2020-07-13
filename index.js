@@ -19,7 +19,7 @@ module.exports = class GrpcServiceInterceptor {
     this.grpcServer = grpcServer;
     this.grpcServiceDefinition = grpcServiceDefinition;
     this.methods = {};
-    this.initialized = false;
+    this.configured = false;
 
     debug('grpc service created');
   }
@@ -69,7 +69,7 @@ module.exports = class GrpcServiceInterceptor {
     return this;
   }
 
-  initialize() {
+  configure() {
     const methods = {};
 
     Object.keys(this.methods).forEach((method) => {
@@ -77,8 +77,8 @@ module.exports = class GrpcServiceInterceptor {
     });
 
     this.grpcServer.addService(this.grpcServiceDefinition, methods);
-    this.initialized = true;
+    this.configured = true;
 
-    debug('grpc service was initialized');
+    debug('grpc service was configured');
   }
 };

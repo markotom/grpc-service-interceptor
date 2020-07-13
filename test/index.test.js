@@ -19,7 +19,7 @@ describe('GrpcServiceInterceptor', () => {
   });
 
   it('should have only allowed methods', () => {
-    const allowedMethods = ['constructor', 'addMethod', 'initialize'];
+    const allowedMethods = ['constructor', 'addMethod', 'configure'];
     const methods = Object.getOwnPropertyNames(GrpcServiceInterceptor.prototype);
     expect(methods).toIncludeSameMembers(allowedMethods);
   });
@@ -62,6 +62,6 @@ describe('GrpcServiceInterceptor', () => {
     expect(service.grpcServiceDefinition).toBe(grpcServiceDefinition);
     expect(service.methods).toBeObject();
     expect(service.methods).toBeEmpty();
-    expect(service.initialized).toBe(false);
+    expect(service.configured).toBe(false);
   });
 });
