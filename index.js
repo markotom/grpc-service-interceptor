@@ -54,7 +54,13 @@ module.exports = class GrpcServiceInterceptor {
           callback,
         };
 
-        return compose(interceptors)(ctx);
+        const handler = interceptors.pop();
+
+        if (interceptors.length) {
+          return compose(interceptors)(ctx).then(() => handler(ctx));
+        }
+
+        return handler(ctx);
       },
     };
 

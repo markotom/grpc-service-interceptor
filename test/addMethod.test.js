@@ -1,5 +1,3 @@
-const grpc = require('grpc');
-
 const GrpcServiceInterceptor = require('..');
 
 const proto = require('./utils/proto');
